@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
+.search-container {
+  width: 300px;
+  display: flex;
+}
+
+.search {
+  width: 100%;
+  border: 1px solid #8a87925e;
+  border-radius: 50px;
+  height: 25px;
+  padding: 16px;
+  outline: none;
+  font-size: small;
+  font-weight: 700;
+  font-family: 'lato', sans-serif;
+}
+
+.search-button {
+  width: 75px;
+  position: absolute;
+  height: 45px;
+  border-radius: 50px;
+  border: 1px solid #ffffff5e;
+  font-family: 'lato', sans-serif;
+  z-index: 1;
+  margin-left: 215px;
+  margin-top: 7px;
+  margin-right: -5px;
+  float: right;
+  outline: none;
+  transform: scale(1);
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  transform: scale(1.09);
+  transition-duration: 500ms;
+}
