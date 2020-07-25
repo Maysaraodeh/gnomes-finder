@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 const Avatars = ({ avatars = [] }) => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="avatars">
       {avatars.map((av) => (
         <Avatar {...av} key={av.id} />
       ))}
@@ -14,7 +14,7 @@ const Avatars = ({ avatars = [] }) => {
 };
 
 Avatar.propTypes = {
-  avatars: PropTypes.array.isRequired,
+  avatars: PropTypes.array,
 };
 
 export default Avatars;

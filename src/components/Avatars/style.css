@@ -68,3 +68,7 @@
   flex-wrap: wrap;
   overflow-y: auto;
 }
+
+.avatars {
+  display: flex;
+}
