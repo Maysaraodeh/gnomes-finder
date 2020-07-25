@@ -4,10 +4,18 @@ import { CardsSkeleton } from 'components/Skeletons';
 import Navbar from 'components/Navbar';
 import { useGnomes } from './helpers';
 import './style.css';
+import { SearchInput } from 'components/Inputs';
 
 export default (props) => {
   const [pageNumber, setPageNumber] = useState(1);
-  const { gnomesChunk = [], loading, error, gnomes, hasMore } = useGnomes({
+  const {
+    gnomesChunk = [],
+    loading,
+    error,
+    gnomes,
+    hasMore,
+    onSearch,
+  } = useGnomes({
     pageNumber,
   });
 
@@ -50,6 +58,7 @@ export default (props) => {
     <div>
       <Navbar />
       <div className="home-container">
+        <SearchInput onSearch={onSearch} />
         <div className="container">
           <div className="cards-container">{itemsList}</div>
         </div>
