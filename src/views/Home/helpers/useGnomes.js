@@ -17,7 +17,10 @@ export default ({ pageNumber = 1 }) => {
       'data.json'
     );
 
-    if (error) return setError(error);
+    if (error) {
+      setLoading(false);
+      return setError(error);
+    }
 
     // present the first {CHUNK_SIZE} data
     setGnomeChunk((gnomeChunks) => {
@@ -53,6 +56,7 @@ export default ({ pageNumber = 1 }) => {
     if (value === '') {
       setFilteredGnomes(gnomes);
       setGnomeChunk([...gnomes.slice(0, pageNumber * CHUNK_SIZE)]);
+      setHasMore(pageNumber * CHUNK_SIZE <= gnomes.length);
       setLoading(false);
       return;
     }
