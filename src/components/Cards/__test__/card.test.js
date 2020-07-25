@@ -13,6 +13,7 @@ it('should render card with provided props', () => {
   expect(getByTestId('card').classList.contains('scale-up-center')).toBe(true);
   expect(getByTestId('card-name')).toHaveTextContent('Gnome3');
   expect(getByTestId('card-img').src).toEqual('https://imageurl.com/');
+  expect(getByTestId('card-professions')).toBeInTheDocument();
   sinon.assert.notCalled(console.error);
 });
 
