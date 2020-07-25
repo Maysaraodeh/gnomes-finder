@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Tag } from '../Tags';
 import './style.css';
 const Card = ({ id, name, age, thumbnail, professions, weight, height }) => {
   return (
@@ -10,6 +11,10 @@ const Card = ({ id, name, age, thumbnail, professions, weight, height }) => {
         </figure>
         <div>
           <h1 data-testid="card-name">{name}</h1>
+        </div>
+        <div data-testid="card-professions" className="professions-container">
+          {professions &&
+            professions.map((p, index) => <Tag profession={p} key={index} />)}
         </div>
       </article>
     </div>
