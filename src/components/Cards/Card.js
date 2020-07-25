@@ -4,6 +4,8 @@ import { Tag } from '../Tags';
 import './style.css';
 import { IconText } from 'components/Custome';
 import { Avatars } from 'components/Avatars';
+import { findGnomeFriends } from 'views/Home/helpers/utils';
+import { gnome } from './__test__/data';
 const Card = ({
   id,
   name,
@@ -12,9 +14,12 @@ const Card = ({
   professions = [],
   weight,
   height,
+  gnomes = [],
+  friends = [],
 }) => {
+  const friendsData = findGnomeFriends(friends, gnomes);
   return (
-    <div key={id} data-testid="card" className="card scale-up-center">
+    <div key={id} data-testid="card" className="card fade-in">
       <article>
         <figure>
           <img data-testid="card-img" alt="avatar" src={thumbnail} />
@@ -39,7 +44,7 @@ const Card = ({
           ))}
         </div>
         <div data-testid="card-avatars" className="avatars-container">
-          <Avatars avatars={[]} />
+          <Avatars avatars={friendsData} />
         </div>
       </article>
     </div>
@@ -54,6 +59,8 @@ Card.propTypes = {
   height: PropTypes.number.isRequired,
   thumbnail: PropTypes.string.isRequired,
   professions: PropTypes.array.isRequired,
+  friends: PropTypes.array.isRequired,
+  gnomes: PropTypes.array.isRequired,
 };
 
 export default Card;

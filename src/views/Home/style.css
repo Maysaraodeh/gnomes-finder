@@ -18,3 +18,8 @@
   font-family: 'Lato', sans-serif;
   color: #8b8893;
 }
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

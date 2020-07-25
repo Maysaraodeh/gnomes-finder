@@ -8,19 +8,17 @@ import sinon from 'sinon';
 stubConsoleError();
 
 it('should render card with provided props', () => {
-  const { getByTestId } = render(<Card {...gnome} gnomes={gnomes}></Card>);
+  const { getByTestId } = render(<Card {...gnome} gnomes={gnomes} />);
   expect(getByTestId('card').classList.contains('card')).toBe(true);
-  expect(getByTestId('card').classList.contains('scale-up-center')).toBe(true);
+  expect(getByTestId('card').classList.contains('fade-in')).toBe(true);
   expect(getByTestId('card-name')).toHaveTextContent('Gnome3');
   expect(getByTestId('card-img').src).toEqual('https://imageurl.com/');
   expect(getByTestId('card-professions')).toBeInTheDocument();
   expect(getByTestId('card-icons')).toBeInTheDocument();
   expect(getByTestId('card-avatars')).toBeInTheDocument();
-
-  sinon.assert.notCalled(console.error);
 });
 
 it('should produce missing props error', () => {
-  render(<Card />);
+  render(<Card gnomes={gnomes} friends={gnome.friends} />);
   sinon.assert.called(console.error);
 });

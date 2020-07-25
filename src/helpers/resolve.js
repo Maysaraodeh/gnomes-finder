@@ -1,4 +1,4 @@
-export default resolve = async (promise) => {
+const resolve = async (promise) => {
   const resolved = {
     data: null,
     status: null,
@@ -34,3 +34,5 @@ export default resolve = async (promise) => {
 
   return resolved;
 };
+
+export default resolve;
