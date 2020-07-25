@@ -3,8 +3,10 @@ import { Card } from 'components/Cards';
 import { CardsSkeleton } from 'components/Skeletons';
 import Navbar from 'components/Navbar';
 import { useGnomes } from './helpers';
-import './style.css';
 import { SearchInput } from 'components/Inputs';
+import { NetworkError } from 'components/Errors';
+import { EmptyData } from 'components/Errors';
+import './style.css';
 
 export default (props) => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -34,14 +36,16 @@ export default (props) => {
     [hasMore]
   );
 
+  console.log(error);
   const itemsList = loading ? (
     <CardsSkeleton />
   ) : error ? (
-    <div>
+    <div className="error-container">
+      <NetworkError />
       <h4>{error.message}</h4>
     </div>
   ) : gnomesChunk.length === 0 ? (
-    <h4> no data found</h4>
+    <EmptyData />
   ) : (
     gnomesChunk.map((d, index) => {
       if (gnomesChunk.length === index + 1)
@@ -58,7 +62,7 @@ export default (props) => {
     <div>
       <Navbar />
       <div className="home-container">
-        <SearchInput onSearch={onSearch} />
+        <SearchInput onSearch={onSearch} error={error} />
         <div className="container">
           <div className="cards-container">{itemsList}</div>
         </div>

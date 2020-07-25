@@ -13,3 +13,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn-primary {
+  color: #8a87925e;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'lato', sans-serif;
+  border: none;
+  color: #000;
+  padding: 16px;
+  outline: none;
+  margin: auto;
+  transform: scale(1);
+  transition-duration: 500ms;
+  -webkit-box-shadow: 10px 10px 20px -12px rgba(110, 110, 110, 1);
+  -moz-box-shadow: 10px 10px 20px -12px rgba(110, 110, 110, 1);
+  box-shadow: 10px 10px 20px -12px rgba(110, 110, 110, 1);
+  cursor: pointer;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.btn-primary:hover {
+  transition-duration: 500ms;
+  transform: scale(1.1);
+}
