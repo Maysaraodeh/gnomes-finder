@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PrimaryTag = ({ profession }) => {
   return (
-    <span data-testid="primary-tag" className="profession-tag">
+    <span data-testid="primary-tag" className="tag">
       {profession}
     </span>
   );
