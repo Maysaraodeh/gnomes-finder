@@ -5,6 +5,7 @@ import './style.css';
 import { IconText } from 'components/Custome';
 import { Avatars } from 'components/Avatars';
 import { findGnomeFriends } from 'views/Home/helpers/utils';
+import { gnome } from './__test__/data';
 const Card = ({
   id,
   name,
@@ -13,8 +14,8 @@ const Card = ({
   professions = [],
   weight,
   height,
-  gnomes,
-  friends,
+  gnomes = [],
+  friends = [],
 }) => {
   const friendsData = findGnomeFriends(friends, gnomes);
   return (
@@ -58,6 +59,8 @@ Card.propTypes = {
   height: PropTypes.number.isRequired,
   thumbnail: PropTypes.string.isRequired,
   professions: PropTypes.array.isRequired,
+  friends: PropTypes.array.isRequired,
+  gnomes: PropTypes.array.isRequired,
 };
 
 export default Card;
