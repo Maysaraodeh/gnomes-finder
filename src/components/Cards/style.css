@@ -1,6 +1,28 @@
 .card {
   margin-bottom: 64px;
 }
+.avatars-container {
+  height: 60px;
+  display: flex;
+  overflow-y: visible;
+  justify-content: center;
+  width: 100%;
+}
+.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.professions-container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.professions-container::-webkit-scrollbar {
+  display: none;
+}
 
 article {
   width: 300px;
