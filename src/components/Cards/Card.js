@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tag } from '../Tags';
 import './style.css';
+import { IconText } from 'components/Custome';
+import { Avatars } from 'components/Avatars';
 const Card = ({
   id,
   name,
@@ -19,11 +21,25 @@ const Card = ({
         </figure>
         <div>
           <h1 data-testid="card-name">{name}</h1>
+          <div data-testid="card-icons" className="icons-container">
+            <IconText
+              icon="weight.png"
+              text={`${weight ? weight.toFixed(2) : weight}`}
+            />
+            <IconText icon="gnome.png" text={`${age}`} />
+            <IconText
+              icon="height.png"
+              text={`${height ? height.toFixed(2) : ''}`}
+            />
+          </div>
         </div>
         <div data-testid="card-professions" className="professions-container">
           {professions.map((p, index) => (
             <Tag profession={p} key={index} />
           ))}
+        </div>
+        <div data-testid="card-avatars" className="avatars-container">
+          <Avatars avatars={[]} />
         </div>
       </article>
     </div>

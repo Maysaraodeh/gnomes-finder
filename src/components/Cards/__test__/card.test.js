@@ -14,6 +14,9 @@ it('should render card with provided props', () => {
   expect(getByTestId('card-name')).toHaveTextContent('Gnome3');
   expect(getByTestId('card-img').src).toEqual('https://imageurl.com/');
   expect(getByTestId('card-professions')).toBeInTheDocument();
+  expect(getByTestId('card-icons')).toBeInTheDocument();
+  expect(getByTestId('card-avatars')).toBeInTheDocument();
+
   sinon.assert.notCalled(console.error);
 });
 
