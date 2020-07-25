@@ -5,7 +5,7 @@ import './style.css';
 import { IconText } from 'components/Custome';
 import { Avatars } from 'components/Avatars';
 import { findGnomeFriends } from 'views/Home/helpers/utils';
-import { gnome } from './__test__/data';
+
 const Card = ({
   id,
   name,
