@@ -8,9 +8,7 @@ stubConsoleError();
 
 it('should render primary tag', () => {
   const { getByTestId } = render(<PrimaryTag profession="Metalworker" />);
-  expect(getByTestId('primary-tag').classList.contains('profession-tag')).toBe(
-    true
-  );
+  expect(getByTestId('primary-tag').classList.contains('tag')).toBe(true);
   expect(getByTestId('primary-tag')).toHaveTextContent('Metalworker');
   sinon.assert.notCalled(console.error);
 });
