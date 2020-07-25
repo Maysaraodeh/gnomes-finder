@@ -1,15 +1,16 @@
 import React from 'react';
 import MainLayout from 'layout';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { ErrorBoundary } from './components/Errors';
 function App() {
   return (
-    <div>
+    <ErrorBoundary>
       <BrowserRouter>
         <Switch>
           <Route path="/" component={MainLayout} />
         </Switch>
       </BrowserRouter>
-    </div>
+    </ErrorBoundary>
   );
 }
 
