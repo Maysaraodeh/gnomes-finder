@@ -1,0 +1,12 @@
+.tag {
+  border: 1px solid #8a87925e;
+  background-color: rgba(255, 255, 255, 0.65);
+  height: 25px;
+  line-height: 25px;
+  margin: 4px;
+  border-radius: 4px;
+  padding: 4px;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.05rem;
+  font-size: small;
+}
