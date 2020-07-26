@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'intersection-observer'; // for support intersection-observer
 
 ReactDOM.render(
   <React.StrictMode>
