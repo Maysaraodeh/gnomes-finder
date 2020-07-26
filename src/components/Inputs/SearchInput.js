@@ -15,13 +15,14 @@ const SearchInput = ({ onSearch, error }) => {
         data-testid="searchInput-input"
         className="search"
         type="text"
+        value={searchValue}
         placeholder="Find Gnomes ..."
         onChange={(e) => {
           const {
             target: { value },
           } = e;
+          setSearchValue(value.toLowerCase());
           if (value === '') return onSearch('', true);
-          return setSearchValue(value.toLowerCase());
         }}
       />
       <button
