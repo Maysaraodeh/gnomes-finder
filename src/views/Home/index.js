@@ -1,12 +1,12 @@
 import React, { useState, useCallback } from 'react';
 import { Card } from 'components/Cards';
 import { CardsSkeleton } from 'components/Skeletons';
-import Navbar from 'components/Navbar';
 import { useGnomes } from './helpers';
 import { SearchInput } from 'components/Inputs';
 import { NetworkError } from 'components/Errors';
 import { EmptyData } from 'components/Errors';
 import './style.css';
+import { StickyHeader } from 'components/Custome';
 
 export default (props) => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -36,7 +36,6 @@ export default (props) => {
     [hasMore]
   );
 
-  console.log(error);
   const itemsList = loading ? (
     <CardsSkeleton />
   ) : error ? (
@@ -60,12 +59,11 @@ export default (props) => {
 
   return (
     <div>
-      <Navbar />
-      <div className="home-container">
+      <StickyHeader>
         <SearchInput onSearch={onSearch} error={error} />
-        <div className="container">
-          <div className="cards-container">{itemsList}</div>
-        </div>
+      </StickyHeader>
+      <div className="home-container">
+        <div className="cards-container">{itemsList}</div>
       </div>
     </div>
   );
