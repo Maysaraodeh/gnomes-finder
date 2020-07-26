@@ -110,6 +110,12 @@ You can download the app and play around, enhance or even learn from it, and her
 
     </details>
 
+# Run Tests
+
+```sh
+$ npm test
+```
+
 # License
 
 [MIT](https://choosealicense.com/licenses/mit/)
