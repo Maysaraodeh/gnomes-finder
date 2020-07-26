@@ -8,3 +8,27 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.header {
+  padding: 10px 16px;
+  background: #fff;
+  color: #f1f1f1;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: ease-in-out 5s;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
