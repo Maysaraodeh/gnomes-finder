@@ -3,6 +3,8 @@ import './style.css';
 import { IconText } from 'components/Custome';
 import { Tag } from 'components/Tags';
 import PropTypes from 'prop-types';
+import Img from 'react-cool-img';
+
 const Avatar = ({
   thumbnail = '',
   weight = 0,
@@ -15,7 +17,12 @@ const Avatar = ({
   return (
     <span key={id} data-testid="avatar" className="tooltip">
       <span className="avatar">
-        <img data-testid="avatar-img" alt="avatar" src={thumbnail} />
+        <Img
+          placeholder={require('assets/img/icons/gnome.png')}
+          src={thumbnail.replace('http', 'https')} // to load images over secured https protocol.
+          error={require('assets/img/icons/no-icon.png')}
+          alt="avatar"
+        />
       </span>
       <div className="top">
         <h1 data-testid="avatar-name">{name}</h1>

@@ -5,6 +5,7 @@ import './style.css';
 import { IconText } from 'components/Custome';
 import { Avatars } from 'components/Avatars';
 import { findGnomeFriends } from 'views/Home/helpers/utils';
+import Img from 'react-cool-img';
 
 const Card = ({
   id,
@@ -22,7 +23,12 @@ const Card = ({
     <div key={id} data-testid="card" className="card fade-in">
       <article>
         <figure>
-          <img data-testid="card-img" alt="avatar" src={thumbnail} />
+          <Img
+            placeholder={require('assets/img/icons/gnome.png')}
+            src={thumbnail.replace('http', 'https')} // to load images over secured https protocol.
+            error={require('assets/img/icons/no-icon.png')}
+            alt="avatar"
+          />
         </figure>
         <div>
           <h1 data-testid="card-name">{name}</h1>
