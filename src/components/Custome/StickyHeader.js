@@ -15,7 +15,7 @@ export default ({ children }) => {
     }
   };
   return (
-    <div class="header" id="stickyHeader">
+    <div className="header" id="stickyHeader">
       {children}
     </div>
   );
