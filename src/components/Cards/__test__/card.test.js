@@ -12,13 +12,14 @@ it('should render card with provided props', () => {
   expect(getByTestId('card').classList.contains('card')).toBe(true);
   expect(getByTestId('card').classList.contains('fade-in')).toBe(true);
   expect(getByTestId('card-name')).toHaveTextContent('Gnome3');
-  expect(getByTestId('card-img').src).toEqual('https://imageurl.com/');
   expect(getByTestId('card-professions')).toBeInTheDocument();
   expect(getByTestId('card-icons')).toBeInTheDocument();
   expect(getByTestId('card-avatars')).toBeInTheDocument();
 });
 
 it('should produce missing props error', () => {
-  render(<Card gnomes={gnomes} friends={gnome.friends} />);
+  render(
+    <Card thumbnail="http://test.com" gnomes={gnomes} friends={gnome.friends} />
+  );
   sinon.assert.called(console.error);
 });

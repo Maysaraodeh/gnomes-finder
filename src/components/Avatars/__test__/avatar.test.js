@@ -12,13 +12,12 @@ test('should render Avatar component with no errors', () => {
   expect(getByTestId('avatar').classList.contains('tooltip')).toBe(true);
   expect(getByText(/Gnome/i)).toBeInTheDocument();
   expect(getByTestId('avatar-name')).toHaveTextContent('Gnome');
-  expect(getByTestId('avatar-img').src).toEqual('https://imageurl.com/');
   expect(getByTestId('avatar-icons')).toBeInTheDocument();
   expect(getByTestId('avatar-professions')).toBeInTheDocument();
   sinon.assert.notCalled(console.error);
 });
 
 it('should produce missing props error', () => {
-  render(<Avatar />);
+  render(<Avatar thumbnail="http://test.com" />);
   sinon.assert.called(console.error);
 });
