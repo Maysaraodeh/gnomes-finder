@@ -7,6 +7,7 @@ import { NetworkError } from 'components/Errors';
 import { EmptyData } from 'components/Errors';
 import './style.css';
 import { StickyHeader } from 'components/Custome';
+import Navbar from 'components/Navbar';
 
 export default (props) => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -60,9 +61,10 @@ export default (props) => {
   return (
     <div>
       <StickyHeader>
+        <Navbar />
         <SearchInput onSearch={onSearch} error={error} />
       </StickyHeader>
-      <div className="home-container">
+      <div id="content" className="home-container">
         <div className="cards-container">{itemsList}</div>
       </div>
     </div>
